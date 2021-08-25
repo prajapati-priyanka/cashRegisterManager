@@ -23,6 +23,7 @@ function calculateAmountToBeReturned() {
   if (cashAmount.value > 0) {
     if (cashAmount.value === billAmount.value) {
       errorMessage.style.display = "block";
+      tableChange.style.display = 'none';
       errorMessage.innerText = "No Change to return";
     } else if (cashAmount.value < billAmount.value) {
       errorMessage.style.display = "block";
