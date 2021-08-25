@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    background-color: #d9ed92;
+   max-width: 600px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+}
+.heading{
+    /* background-color: blue; */
+    padding:1rem 1rem 0 1rem;
+}
+.description{
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+label, caption{
+    font-size: 1.3rem;
+   
+    
+}
+input{
+    width:90%;
+    padding: .7rem;
+    border-radius: 0.4rem;
+    margin: 1rem auto;
+
+}
+table,th,td{
+    border: 1px solid black;
+    padding: 0.7rem;
+    width:90%;
+    margin: 1rem auto;
+
+}
+table{
+    border-collapse: collapse;
+    border: none;
+ 
+    
+}
+th{
+    font-size: larger;
+    background-color: #99d98c80;
+}
+.notes{
+    background-color: #99d98c80;
+}
+button{
+    width: 15%;
+    padding: 0.6rem;
+    margin: 1rem auto;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+}
+button:hover{
+    background-color: #99d98c80;
+}
+.bill-input{
+    background-color: indigo;
+}
+
+
+#error-msg{
+    background-color: red;
+    padding: 1rem;
+    font-size: 1.2rem;
+    
+}
