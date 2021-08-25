@@ -66,13 +66,8 @@ button{
 button:hover{
     background-color: #99d98c80;
 }
-.bill-input{
-    background-color: indigo;
-}
-
-
 #error-msg{
-    background-color: red;
+  
     padding: 1rem;
     font-size: 1.2rem;
     
