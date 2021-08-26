@@ -6,6 +6,7 @@ const errorMessage = document.querySelector("#error-msg");
 const btnCheck = document.querySelector("#btn-check");
 const notesToReturn = document.querySelectorAll(".no-of-notes");
 const tableChange = document.querySelector(".table-change");
+const tableCaption = document.querySelector("#table-caption");
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
 function nextButtonHandler() {
@@ -23,15 +24,19 @@ function calculateAmountToBeReturned() {
   if (cashAmount.value > 0) {
     if (cashAmount.value === billAmount.value) {
       errorMessage.style.display = "block";
-      tableChange.style.display = 'none';
+      tableChange.style.display = "none";
+      tableCaption.style.display = "none";
       errorMessage.innerText = "No Change to return";
     } else if (cashAmount.value < billAmount.value) {
       errorMessage.style.display = "block";
       tableChange.style.display = "none";
-      errorMessage.innerText = "Cash is less than bill, please enter right amount";
+      tableCaption.style.display = "none";
+      errorMessage.innerText =
+        "Cash is less than bill, please enter right amount";
     } else if (cashAmount.value > billAmount.value) {
       errorMessage.style.display = "none";
       tableChange.style.display = "block";
+      tableCaption.style.display = "block";
 
       let amountToBeReturned = cashAmount.value - billAmount.value;
 
@@ -44,8 +49,10 @@ function calculateAmountToBeReturned() {
       }
     } else {
       errorMessage.style.display = "block";
-      errorMessage.innerText = "Enter valid bill amount and cash given to continue";
+      errorMessage.innerText =
+        "Enter valid bill amount and cash given to continue";
       tableChange.style.display = "none";
+      tableCaption.style.display = "none";
     }
   }
 }
