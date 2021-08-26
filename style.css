@@ -7,7 +7,7 @@
 
 .container{
     background-color: #d9ed92;
-   max-width: 600px;
+    max-width:600px;
     margin: 4rem auto;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 }
 label, caption{
     font-size: 1.3rem;
-   
+       
     
 }
 input{
@@ -34,19 +34,22 @@ input{
     margin: 1rem auto;
 
 }
-table,th,td{
+
+ th,td{
     border: 1px solid black;
     padding: 0.7rem;
-    width:90%;
-    margin: 1rem auto;
-
-}
-table{
-    border-collapse: collapse;
-    border: none;
- 
+    width: 100%;
+    margin: auto;
     
 }
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+}
+
+
 th{
     font-size: larger;
     background-color: #99d98c80;
@@ -55,7 +58,7 @@ th{
     background-color: #99d98c80;
 }
 button{
-    width: 15%;
+    width: 30%;
     padding: 0.6rem;
     margin: 1rem auto;
     font-size: 1.1rem;
