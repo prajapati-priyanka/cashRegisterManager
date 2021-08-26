@@ -22,11 +22,15 @@
     padding: 1rem;
     font-size: 1.2rem;
 }
-label, caption{
+label{
     font-size: 1.3rem;
-       
-    
 }
+#table-caption{
+    font-size: 1.3rem;
+    text-align: center;
+
+}
+
 input{
     width:90%;
     padding: .7rem;
@@ -35,7 +39,8 @@ input{
 
 }
 
- th,td{
+
+th,td{
     border: 1px solid black;
     padding: 0.7rem;
     width: 100%;
@@ -48,12 +53,12 @@ table{
   width: 100%;
   overflow-x: auto;
 }
-
-
-th{
-    font-size: larger;
+ 
+th {
+  font-size: larger;
     background-color: #99d98c80;
 }
+
 .notes{
     background-color: #99d98c80;
 }
