@@ -54,8 +54,15 @@ function calculateAmountToBeReturned() {
       tableChange.style.display = "none";
       tableCaption.style.display = "none";
     }
+  }else{
+    errorMessage.style.display = "block";
+    errorMessage.innerText = "Enter valid cash amount";
+    tableChange.style.display = "none";
+    tableCaption.style.display = "none";
   }
 }
+
+
 
 btnNext.addEventListener("click", nextButtonHandler);
 btnCheck.addEventListener("click", calculateAmountToBeReturned);
