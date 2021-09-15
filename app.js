@@ -13,32 +13,29 @@ function nextButtonHandler() {
   if (Number(billAmount.value) > 0) {
     cashGivenInput.style.display = "block";
     btnNext.style.display = "none";
-    errorMessage.style.display = "none";
+    hideErrorMessage();
   } else {
-    errorMessage.style.display = "block";
-    errorMessage.innerText = "Enter Valid Bill Amount";
+    showErrorMessage("Enter Valid Bill Amount");
   }
 }
 
 function calculateAmountToBeReturned() {
   if (Number(cashAmount.value) > 0) {
     if (Number(cashAmount.value) === Number(billAmount.value)) {
-      errorMessage.style.display = "block";
-      tableChange.style.display = "none";
-      tableCaption.style.display = "none";
-      errorMessage.innerText = "No Change to return";
+      showErrorMessage("No Change to return");
+      hideTableChange();
+      hideTableCaption();
     } else if (Number(cashAmount.value) < Number(billAmount.value)) {
-      errorMessage.style.display = "block";
-      tableChange.style.display = "none";
-      tableCaption.style.display = "none";
-      errorMessage.innerText =
-        "Cash is less than bill, please enter right amount";
-    } else if (Number(cashAmount.value)> Number(billAmount.value)) {
-      errorMessage.style.display = "none";
-      tableChange.style.display = "block";
-      tableCaption.style.display = "block";
+      showErrorMessage("Cash is less than bill, please enter right amount");
+      hideTableChange();
+      hideTableCaption();
+    } else if (Number(cashAmount.value) > Number(billAmount.value)) {
+      hideErrorMessage();
+      showTableChange();
+      showTableCaption();
 
-      let amountToBeReturned = Number(cashAmount.value) -Number(billAmount.value);
+      let amountToBeReturned =
+        Number(cashAmount.value) - Number(billAmount.value);
 
       for (let i = 0; i < availableNotes.length; i++) {
         let numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
@@ -48,21 +45,38 @@ function calculateAmountToBeReturned() {
         notesToReturn[i].innerText = numberOfNotes;
       }
     } else {
-      errorMessage.style.display = "block";
-      errorMessage.innerText =
-        "Enter valid bill amount and cash given to continue";
-      tableChange.style.display = "none";
-      tableCaption.style.display = "none";
+      showErrorMessage("Enter valid bill amount and cash given to continue");
+
+      hideTableChange();
+      hideTableCaption();
     }
-  }else{
-    errorMessage.style.display = "block";
-    errorMessage.innerText = "Enter valid cash amount";
-    tableChange.style.display = "none";
-    tableCaption.style.display = "none";
+  } else {
+    showErrorMessage("Enter valid cash amount");
+
+    hideTableChange();
+    hideTableCaption();
   }
 }
 
-
+function showErrorMessage(message) {
+  errorMessage.style.display = "block";
+  errorMessage.innerText = message;
+}
+function hideErrorMessage() {
+  errorMessage.style.display = "none";
+}
+function showTableChange() {
+  tableChange.style.display = "block";
+}
+function hideTableChange() {
+  tableChange.style.display = "none";
+}
+function showTableCaption() {
+  tableCaption.style.display = "block";
+}
+function hideTableCaption() {
+  tableCaption.style.display = "none";
+}
 
 btnNext.addEventListener("click", nextButtonHandler);
 btnCheck.addEventListener("click", calculateAmountToBeReturned);
