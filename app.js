@@ -16,10 +16,12 @@ function nextButtonHandler() {
     hideErrorMessage();
   } else {
     showErrorMessage("Enter Valid Bill Amount");
+  
   }
 }
 
 function calculateAmountToBeReturned() {
+
   if (Number(cashAmount.value) > 0) {
     if (Number(cashAmount.value) === Number(billAmount.value)) {
       showErrorMessage("No Change to return");
@@ -55,6 +57,11 @@ function calculateAmountToBeReturned() {
 
     hideTableChange();
     hideTableCaption();
+  }
+  if(Number(billAmount.value) < 0){
+    hideTableCaption();
+    hideTableChange();
+    showErrorMessage("Enter positive bill amount");
   }
 }
 
