@@ -8,7 +8,7 @@
 .container{
     background-color: #d9ed92;
     max-width:600px;
-    margin: 4rem auto;
+    margin: 7rem auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -80,3 +80,25 @@ button:hover{
     font-size: 1.2rem;
     
 }
+
+footer {
+    /* background-color: #f77f0030; */
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+    
+  }
+  footer h2 {
+    text-decoration: underline;
+  }
+  .footer-link {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+  .footer-link a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+  }
